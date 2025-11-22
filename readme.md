@@ -28,38 +28,34 @@
 
 ```
 Shop_API/
-|___configs/
-| |__ __init__.py
+|__configs/
 | |__config.py
 |
-|___fixtures/
+|__fixtures/
 | |__api.py
 |
-|___pages/
-| |__ __init__.py
+|__pages/
 | |__base_page.py
 | |__firm_page.py
 |
-|___tests/
+|__tests/
 | |__api/
 | | |__test_firm.py
 | |__files/
 | | |__example_image.img
 |
-|___utils/
-| |__ __init__.py
+|__utils/
 | |__api_auth.py
 | |__endpoints.py
 | |__request_logger.py
 | |__signature.py
 | |__token_access.txt
 |
-|___venv/
-|___.env.v29
-|___.gitlab-ci
-|___conftest.py
-|___pytest.ini
-|___requirement.txt
+|__.env.v29
+|__.gitlab-ci
+|__conftest.py
+|__pytest.ini
+|__requirement.txt
 .gitignore
 readme.md
 ```
@@ -124,19 +120,16 @@ allure open reports/allure-report
 def patch_requests(monkeypatch):
     original_request = requests.request
     original_session_request = requests.Session.request
-
     def traced_request(method, url, **kwargs):
         resp = original_request(method, url, **kwargs)
         mask_token = "/application?action=authorization" in url
         live_format_request_response(resp, mask_access_token=mask_token)
         return resp
-
     def traced_session_request(self, method, url, **kwargs):
         resp = original_session_request(self, method, url, **kwargs)
         mask_token = "/application?action=authorization" in url
         live_format_request_response(resp, mask_access_token=mask_token)
         return resp
-
     monkeypatch.setattr(requests, "request", traced_request)
     monkeypatch.setattr(requests.Session, "request", traced_session_request)
 ```

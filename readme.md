@@ -27,6 +27,7 @@
 
 Структура репозитория:
 
+```bash
 readme.md
 .gitignore
 Shop_API/
@@ -62,7 +63,7 @@ Shop_API/
 |___conftest.py
 |___pytest.ini
 |___requirement.txt
-
+```
 
 ---
 

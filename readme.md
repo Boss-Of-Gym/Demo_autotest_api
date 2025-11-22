@@ -1,8 +1,8 @@
 # Automation QA Portfolio – Python, Pytest, Requests
 
-**Автор:** Дмитрий
-**Роль:** Automation QA Engineer
-**Контакты:** <naydanov.dmitriy@gmail.com> • <@DatorDeus>
+> **Автор:** Дмитрий
+> **Роль:** Automation QA Engineer
+> **Контакты:** <naydanov.dmitriy@gmail.com> • <@DatorDeus>
 
 ---
 
